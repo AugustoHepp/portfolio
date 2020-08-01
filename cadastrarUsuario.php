@@ -16,11 +16,6 @@
 
     }
 
-    if (!mysqli_query($conn, $sql)) {
-        echo "Erro ao criar a tabela de usuários" . "<br>" . "Erro: " . $sql . "<br>" . mysqli_error($conn);
-        exit;
-    }
-
     //Verificando se o usuário informado já existe na base de dados
     $sql = "SELECT 1 FROM usuarios WHERE email = '$email'";
     $resultado = mysqli_query($conn, $sql);
@@ -29,7 +24,7 @@
     if ($NumRegistros == 0) {
 
         $senhaCripto = password_hash($senha, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO USUARIOS(email, senha) VALUES('$email', '$senhaCripto')";
+        $sql = "INSERT INTO usuarios(email, senha) VALUES('$email', '$senhaCripto')";
 
         if (mysqli_query($conn, $sql)) {
             $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>

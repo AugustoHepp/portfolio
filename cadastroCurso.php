@@ -14,6 +14,9 @@
 <html>
 <head>
     <meta charset="UTF8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
+    
 	<title>Cursos</title>
 
 	<!-- JS, Popper.js, and jQuery -->
@@ -56,7 +59,7 @@
 						<input type="text" name="descricao" required="" class="form-control" placeholder="descrição">
                     </div>
                     <div class="input-group form-group">
-                        <select name = "categoria" class="form-control ml-2" style="margin-inline: 10px !important;">
+                        <select name = "categoria" class="form-control">
                                 <option value = "">Categoria</option>
 
                                 <?php
